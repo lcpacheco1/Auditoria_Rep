@@ -1,2 +1,0 @@
-# Auditoria
-Controles de seguridad
