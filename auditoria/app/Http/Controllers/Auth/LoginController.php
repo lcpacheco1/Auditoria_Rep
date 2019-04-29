@@ -21,4 +21,4 @@ class LoginController extends Controller
         }
         return 'Error de autenticacion';*/
     }
-}
+} 
