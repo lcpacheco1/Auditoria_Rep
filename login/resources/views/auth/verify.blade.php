@@ -10,12 +10,12 @@
                 <div class="card-body">
                     @if (session('resent'))
                         <div class="alert alert-success" role="alert">
-                            {{ __('A fresh verification link has been sent to your email address.') }}
+                            {{ __('Se ha enviado un link de verificación a tu correo electrónico.') }}
                         </div>
                     @endif
 
-                    {{ __('Before proceeding, please check your email for a verification link.') }}
-                    {{ __('If you did not receive the email') }}, <a href="{{ route('verification.resend') }}">{{ __('click here to request another') }}</a>.
+                    {{ __('Por favor revisa tu email para el link de verificación.') }}
+                    {{ __('Si no has recibido el email') }}, <a href="{{ route('verification.resend') }}">{{ __('haz clic aquí para pedir otro') }}</a>.
                 </div>
             </div>
         </div>
