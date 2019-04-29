@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Login</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
@@ -48,21 +48,15 @@
                 font-size: 84px;
             }
 
-            .links > a {
-                color: #C0C0C0;
-                padding: 0 25px;
+            .links > a{
+                color: #FFFF00;
+                padding:  25px;
                 font-size: 13px;
                 font-weight: 600;
-                letter-spacing: .1rem;
+                letter-spacing: .2rem;
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
-            .links > a:hover {
-                background: #C0C0C0;
-                color: #2F4F4F;
-            }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -73,12 +67,12 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Inicio</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="{{ route('login') }}">Iniciar Sesión</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Registro</a>
                         @endif
                     @endauth
                 </div>
@@ -86,7 +80,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Auditoria Informática
+                    Auditoría Informática
                 </div>
             </div>
         </div>
