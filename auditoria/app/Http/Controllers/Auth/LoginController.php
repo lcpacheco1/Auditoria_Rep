@@ -13,12 +13,14 @@ class LoginController extends Controller
             'email' => 'email|required|string',
             'password' => 'required|string'
         ]);
-        return $credentials;
         
-        /*if(Auth::attempt($credentials))
+       
+
+        if(Auth::attempt($credentials)) 
         {
             return 'Tu sesion ha iniciado correctamente';
         }
-        return 'Error de autenticacion';*/
+
+        return back()->withErrors(['email' => 'Estas credenciales no coinciden con nuestros registros, por favor vuelve a intentar']);
     }
-} 
+}
