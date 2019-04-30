@@ -1,13 +1,29 @@
-Inicio (Despliegue de datos)
 
-<table class="table table-light">
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+
+
+@if(Session::has('Mensaje')) {{
+
+	Session::get('Mensaje')
+
+}}
+@endif
+
+
+<a href="{{ url('Usuarios/create') }}" class="btn btn-success">Agregar Usuario</a>
+<br>
+<br>
+
+
+<table class="table table-light table-hover">
 
 	<thead class="thead-light">
 		<tr>
 			<th>#</th>
 			<th>Nombre</th>
-			<th>Apellido Paterno</th>
-			<th>Apellido Materno</th>
 			<th>Correo</th>
 			<th>Acciones</th>
 		</tr>
@@ -17,13 +33,11 @@ Inicio (Despliegue de datos)
 	@foreach($Usuarios as $usuario)
 		<tr>
 			<td>{{$loop->iteration}}</td>
-			<td>{{$usuario->Nombre}}</td>
-			<td>{{$usuario->ApellidoPaterno}}</td>
-			<td>{{$usuario->ApellidoMaterno}}</td>
+			<td>{{$usuario->Nombre}} {{$usuario->ApellidoPaterno}} {{$usuario->ApellidoMaterno}}</td>
 			<td>{{$usuario->Correo}}</td>
 			<td>
 
-			<a href="{{url('/Usuarios/'.$usuario->id.'/edit') }}">
+			<a class="btn btn-warning" href="{{url('/Usuarios/'.$usuario->id.'/edit') }}">
 				
 				Editar
 
@@ -32,11 +46,11 @@ Inicio (Despliegue de datos)
 			 | 
 
 			<form method="post" action="{{url('/
-			Usuarios/'.$usuario->id) }}">
+			Usuarios/'.$usuario->id) }}" style="display: inline">
 				
 				{{csrf_field() }}
 				{{method_field('DELETE') }}
-				<button type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>
+				<button class="btn btn-danger" type="submit" onclick="return confirm('¿Borrar?');">Borrar</button>
 
 			</form>
 
@@ -46,3 +60,5 @@ Inicio (Despliegue de datos)
 	</tbody>
 	
 </table>
+</div>
+@endsection

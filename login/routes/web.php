@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 //Route::get('/Usuarios', 'UsuariosController@index');
@@ -23,8 +23,8 @@ Route::resource('Usuarios', 'UsuariosController');
 //--------------------------------------------------//
 Auth::routes();
 
-Route::get('/log-viewer', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/log-viewer', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
