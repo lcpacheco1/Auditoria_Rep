@@ -23,8 +23,8 @@ Route::resource('Usuarios', 'UsuariosController');
 //--------------------------------------------------//
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/log-viewer', 'HomeController@index')->name('home');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/log-viewer', 'HomeController@index')->name('home');

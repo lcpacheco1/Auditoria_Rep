@@ -175,6 +175,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * Application Error Log views...
+         */
+        Arcanedev\LogViewer\LogViewerServiceProvider::class,
+
     ],
 
     /*
